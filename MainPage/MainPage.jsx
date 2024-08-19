@@ -12,7 +12,9 @@ export default function MainPage() {
   return (
     <div className="">
       <HeaderLogin />
-      <Header />
+      <Header 
+      data = {data5}
+      />
       <Main />
       <News 
       data = {data3}

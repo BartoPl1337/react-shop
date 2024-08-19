@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-
 export default function News(props) {
   const swiperRef = useRef(null);
   return (
@@ -34,14 +33,14 @@ export default function News(props) {
           ref={swiperRef}
           slidesPerView={3.1}
           spaceBetween={8}
-          className="h-[800px]"
+          className="h-[850px]"
         >
           {props.data.map((item) => (
-            <SwiperSlide className="relative h-full">
+            <SwiperSlide className="relative">
               <img
                 src={item.img}
                 alt={item.desc}
-                className="h-full w-full absolute inset-0 object-cover object-center"
+                className="h-[800px] w-full inset-0 object-cover object-center"
               />
               <h3 className="font-medium text-xl pt-6">{item.desc}</h3>
             </SwiperSlide>
