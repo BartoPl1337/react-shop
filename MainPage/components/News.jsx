@@ -37,12 +37,14 @@ export default function News(props) {
         >
           {props.data.map((item) => (
             <SwiperSlide className="relative">
+              <a href={item.url} className="">
               <img
                 src={item.img}
                 alt={item.desc}
                 className="h-[800px] w-full inset-0 object-cover object-center"
-              />
+                />
               <h3 className="font-medium text-xl pt-6">{item.desc}</h3>
+              </a>
             </SwiperSlide>
           ))}
         </Swiper>

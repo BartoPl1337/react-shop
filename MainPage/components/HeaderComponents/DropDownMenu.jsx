@@ -2,9 +2,7 @@ import React from "react";
 export default function DropDownMenu(props) {
   return (
     <div
-      className="flex px-64 py-10 list-none"
-      onMouseLeave={props.onMouseOver}
-    >
+      className="flex px-64 py-10 list-none">
       {props.menu.map((item) => (
         <div className="flex-1">
           <ul href="" className="font-bold py-5">

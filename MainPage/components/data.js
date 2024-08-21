@@ -1,7 +1,7 @@
 export const data1 = [
     {
         "img": "/airmax.jpg",
-        "desc": "Air Max"
+        "desc": "Air Max",
     },
     {
         "img": "/airforce1.jpg",
@@ -46,23 +46,28 @@ export const data2 = [ {
 export const data3 = [
     {
         "img": "/nikeShoe.jpg",
-        "desc": "Shop Air"
+        "desc": "Shop Air",
+        "url": "shopair"
     },
     {
         "img": "/NikeJam.jpg",
-        "desc": "Nike Jam"
+        "desc": "Nike Jam",
+        "url": "nikejam"
     },
     {
         "img": "/Wem.jpg",
-        "desc": "Wembanyama x Air Max Dn"
+        "desc": "Wembanyama x Air Max Dn",
+        "url": "wembanyama"
     },
     {
         "img": "/Amb.jpg",
-        "desc": "Kolekcja Mad Ambition Pack"
+        "desc": "Kolekcja Mad Ambition Pack",
+        "url": "madambition"
     },
     {
         "img": "/FreeMet.jpg",
-        "desc": "Nike Free Metcon 6"
+        "desc": "Nike Free Metcon 6",
+        "url": "freemetcon"
     },
 ]
 

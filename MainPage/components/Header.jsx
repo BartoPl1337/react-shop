@@ -57,25 +57,38 @@ export default function Header(props) {
   return (
     <header
       className={`bg-black text-white p-3 ${hidden ? "sticky top-0 z-10" : ""}`}
+      onMouseLeave={onMouseLeave}
     >
       <div className="flex mx-12 items-center">
         <div className="flex-1">
-          <Frame />
+          <a href="/">
+            <Frame />
+            </a>
         </div>
         {!showSearchBar && (
-          <div className="flex flex-1 gap-6 justify-center font-semibold text-base">
-            <a href="" onMouseOver={onMouseOver} aria-label="1">
-              Nowe i polecane
-            </a>
-            <a href="" onMouseOver={onMouseOver} aria-label="2">
-              Mężczyzni
-            </a>
-            <a href="" onMouseOver={onMouseOver} aria-label="3">
-              Kobiety
-            </a>
-            <a href="" onMouseOver={onMouseOver} aria-label="4">
-              Dzieci
-            </a>
+          <div>
+            <ul className="flex flex-1 gap-6 justify-center font-semibold text-base">
+              <li className="hover:underline">
+                <a href="" onMouseOver={onMouseOver} aria-label="1">
+                  Nowe i polecane
+                </a>
+              </li>
+              <li className="hover:underline">
+                <a href="" onMouseOver={onMouseOver} aria-label="2">
+                  Mężczyzni
+                </a>
+              </li>
+              <li className="hover:underline">
+                <a href="" onMouseOver={onMouseOver} aria-label="3">
+                  Kobiety
+                </a>
+              </li>
+              <li className="hover:underline">
+                <a href="" onMouseOver={onMouseOver} aria-label="4">
+                  Dzieci
+                </a>
+              </li>
+            </ul>
           </div>
         )}
         <div className="flex flex-1 gap-6 justify-end items-center">
@@ -84,7 +97,7 @@ export default function Header(props) {
             placeholder="Wyszukaj"
             className="rounded-full p-1.5 w-1/4 bg-neutral-700 font-semibold"
             onChange={(e) => setSearch(e.target.value)}
-            onClick={() => setShowSearchBar(true)}
+            onClick={() => setShowSearchBar((prev) => !prev)}
           />
           <button href="" className="hover:bg-neutral-700 rounded-full p-2">
             <Heart />
@@ -101,8 +114,8 @@ export default function Header(props) {
         <SearchBar
           data={props.data}
           search={search}
+          setShowSearchBar={setShowSearchBar}
           className="z-10"
-          onMouseOver={() => setShowSearchBar((prev) => false)}
         />
       )}
     </header>
