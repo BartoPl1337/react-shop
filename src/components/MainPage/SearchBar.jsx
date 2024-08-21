@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 
-const SearchBar = ({search, data, setShowSearchBar}) => {
+const SearchBar = ({search, data, setShowSearchBar, inputRef}) => {
     const ref = useRef(null)
     const handleClickOutside = (e) => {
         setShowSearchBar(false)
     }
-    useOnClickOutside(ref, handleClickOutside)
+    useOnClickOutside([inputRef,ref], handleClickOutside)
   return (
     <div className='bg-black text-white'
     ref={ref}
@@ -14,7 +14,7 @@ const SearchBar = ({search, data, setShowSearchBar}) => {
         <div className='flex my-16 mx-24'>
         {data.filter((item) => {
             return search.toLowerCase() === '' ? item : item.brand.toLowerCase().includes(search)
-        }).map((item) => {
+        }).slice(0,3).map((item) => {
             return (
                 <div className='flex flex-1'>
                     <img src={item.img} alt={item.brand} 

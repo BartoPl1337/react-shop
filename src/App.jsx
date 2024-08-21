@@ -1,8 +1,7 @@
 import React from "react"
-import MainPage from "../MainPage/MainPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import ShopAir from "../ShopAir/ShopAir"
-
+import MainPage from "./Pages/MainPage"
+import ShopAir from "./Pages/ShopAir"
 
 export default function App() {
   return (

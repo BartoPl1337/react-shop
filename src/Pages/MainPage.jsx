@@ -1,12 +1,12 @@
 import React from "react"
-import HeaderLogin from "./components/HeaderLogin"
-import Header from "./components/Header"
-import Main from "./components/Main"
-import News from "./components/News"
-import Cards from "./components/Cards"
-import { data1, data2, data3, data5 } from "./components/data"
-import Items from "./components/Items"
-import Footer from "./components/Footer"
+import { data1, data2, data3, data5 } from "../components/MainPage/data"
+import Header from "../components/MainPage/Header"
+import News from "../components/MainPage/News"
+import Main from "../components/MainPage/Main"
+import Cards from "../components/MainPage/Cards"
+import Items from "../components/MainPage/Items"
+import Footer from "../components/MainPage/Footer"
+import HeaderLogin from "../components/MainPage/HeaderLogin"
 
 export default function MainPage() {
   return (

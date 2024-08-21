@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Frame, ShoppingCart, Heart } from "lucide-react";
 import DropDownMenu from "./HeaderComponents/DropDownMenu";
 import { News, Mens, Womens, Kids } from "./HeaderComponents/NewsData";
 import SearchBar from "./SearchBar";
 
 export default function Header(props) {
+  const inputRef = useRef(null);
   // SearchBar
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [search, setSearch] = useState("");
@@ -43,6 +44,8 @@ export default function Header(props) {
 
       if (scrollY > current) {
         setHidden(false);
+      } else if (scrollY < 10) {
+        setHidden(false);
       } else {
         setHidden(true);
       }
@@ -56,14 +59,16 @@ export default function Header(props) {
 
   return (
     <header
-      className={`bg-black text-white p-3 ${hidden ? "sticky top-0 z-10" : ""}`}
+      className={`bg-black text-white p-3 ${
+        hidden ? "fixed top-0 z-10 right-0 left-0" : ""
+      } ${props.className}`}
       onMouseLeave={onMouseLeave}
     >
       <div className="flex mx-12 items-center">
         <div className="flex-1">
-          <a href="/">
+          <a href="/" className="flex w-6">
             <Frame />
-            </a>
+          </a>
         </div>
         {!showSearchBar && (
           <div>
@@ -98,6 +103,7 @@ export default function Header(props) {
             className="rounded-full p-1.5 w-1/4 bg-neutral-700 font-semibold"
             onChange={(e) => setSearch(e.target.value)}
             onClick={() => setShowSearchBar((prev) => !prev)}
+            ref={inputRef}
           />
           <button href="" className="hover:bg-neutral-700 rounded-full p-2">
             <Heart />
@@ -112,6 +118,7 @@ export default function Header(props) {
       )}
       {showSearchBar && (
         <SearchBar
+          inputRef={inputRef}
           data={props.data}
           search={search}
           setShowSearchBar={setShowSearchBar}
