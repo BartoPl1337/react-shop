@@ -6,7 +6,7 @@ const ShopAir = () => {
   return (
     <div>
       <HeaderLogin />
-      <Header />
+      {/* <Header /> */}
       <Sorts />
     </div>
   )

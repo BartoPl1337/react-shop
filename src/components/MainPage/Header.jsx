@@ -59,12 +59,12 @@ export default function Header(props) {
 
   return (
     <header
-      className={`bg-black text-white p-3 ${
+      className={`bg-black text-white ${
         hidden ? "fixed top-0 z-10 right-0 left-0" : ""
       } ${props.className}`}
       onMouseLeave={onMouseLeave}
     >
-      <div className="flex mx-12 items-center">
+      <div className="flex mx-12 items-center p-3">
         <div className="flex-1">
           <a href="/" className="flex w-6">
             <Frame />
@@ -97,14 +97,17 @@ export default function Header(props) {
           </div>
         )}
         <div className="flex flex-1 gap-6 justify-end items-center">
-          <input
-            type="search"
-            placeholder="Wyszukaj"
-            className="rounded-full p-1.5 w-1/4 bg-neutral-700 font-semibold"
-            onChange={(e) => setSearch(e.target.value)}
-            onClick={() => setShowSearchBar((prev) => !prev)}
-            ref={inputRef}
-          />
+          {!showDropDownMenu &&
+          (
+            <input
+              type="search"
+              placeholder="Wyszukaj"
+              className="rounded-full p-1.5 w-1/4 bg-neutral-700 font-semibold"
+              onChange={(e) => setSearch(e.target.value)}
+              onClick={() => setShowSearchBar((prev) => !prev)}
+              ref={inputRef}
+            />
+          )}
           <button href="" className="hover:bg-neutral-700 rounded-full p-2">
             <Heart />
           </button>
